@@ -7,23 +7,36 @@ struct DrowView: View {
     @State private var showAlert = true
 
     var body: some View {
-        ZStack {
-            Color(
-                red: 0.95,
-                green: 0.90,
-                blue: 0.85
-            )
-            .ignoresSafeArea()
-        }
-        .alert("Are you sure you want to delete?", isPresented: $showAlert) {
-            Button("Yes", role: .destructive) {
-                // Delete action
+    
+        
+        
+        List{ //يعامل كل كونتيتر على شكل row
+            VStack{
+                
+                Image(.aseel)
+                    .resizable()
+                    .frame(width: 200,height: 200)
+                    .clipShape(.circle)
+                
+                Text("Alanoud")
+                    .font(.title)
+                    .fontWeight(.semibold)
             }
+            .frame(maxWidth:.infinity,
+                   alignment: .center)
+            
+            
+            Section{
+                Text("I’m an Information Technology graduate with a passion for mobile app development, I enjoy learning new technologies, solving problems, and creating user-friendly digital solutions.")
+                
+                
+            }header: {
+                Text("About")
+            }
+            
+            
+        }
 
-            Button("No", role: .cancel) {
-                // Cancel action
-            }
-        }
     }
 
 
